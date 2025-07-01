@@ -1,0 +1,94 @@
+/* 🌈 Fresh Color Palette */
+:root {
+  --bg-color: #e8fdf5;
+  --primary: #00c9a7;
+  --secondary: #008c72;
+  --text-color: #333;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--primary);
+  color: var(--white);
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+main {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.job-card {
+  background-color: var(--white);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border-left: 6px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.job-card h2 {
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.job-card p {
+  margin: 0.3rem 0;
+}
+
+.apply-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.apply-btn:hover {
+  background-color: var(--secondary);
+}
+
+footer {
+  margin-top: auto;
+  padding: 1rem;
+  background-color: var(--primary);
+  color: var(--white);
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+}
