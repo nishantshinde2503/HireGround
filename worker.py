@@ -1,15 +1,16 @@
+import time
+import datetime
 import requests
 import json
-import os
-from dotenv import load_dotenv
 
-# 🌿 Load environment variables from .env
-load_dotenv()
-
-APP_ID = os.getenv("APP_ID")
-APP_KEY = os.getenv("APP_KEY")
+APP_ID = "6fec1d82"
+APP_KEY = "a29f04d390c8e5ebaf2ce359d576ee7d"
 
 API_URL = f"https://api.adzuna.com/v1/api/jobs/in/search/1?app_id={APP_ID}&app_key={APP_KEY}&what=developer&where=India&results_per_page=25"
+
+def is_daytime():
+    now = datetime.datetime.now().time()
+    return datetime.time(8, 0) <= now <= datetime.time(22, 0)
 
 def fetch_and_save_jobs():
     try:
@@ -35,10 +36,16 @@ def fetch_and_save_jobs():
         with open("jobs.json", "w", encoding="utf-8") as f:
             json.dump({"results": formatted}, f, indent=2)
 
-        return {"status": "success", "results": formatted}
+        print(f"✅ Refreshed at {datetime.datetime.now().strftime('%H:%M:%S')}")
 
     except Exception as e:
-        return {"status": "error", "message": str(e)}
+        print(f"❌ Error: {e}")
 
-if __name__ == "__main__":
+# 🔁 Keep refreshing on cycle
+while True:
     fetch_and_save_jobs()
+    
+    if is_daytime():
+        time.sleep(15 * 60)  # 15 mins
+    else:
+        time.sleep(60 * 60)  # 1 hour
