@@ -1,94 +1,232 @@
-/* 🌈 Fresh Color Palette */
-:root {
-  --bg-color: #e8fdf5;
-  --primary: #00c9a7;
-  --secondary: #008c72;
-  --text-color: #333;
-  --white: #ffffff;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* ✨ HireGround Cinematic CSS ✨ */
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #eef2f5, #ffffff);
+  color: #333;
+  overflow-x: hidden;
+  animation: bgPulse 20s ease-in-out infinite;
+}
+
+@keyframes bgPulse {
+  0% { background: linear-gradient(to bottom right, #eef2f5, #ffffff); }
+  50% { background: linear-gradient(to bottom right, #dce7f4, #dbe8fa); }
+  100% { background: linear-gradient(to bottom right, #eef2f5, #ffffff); }
 }
 
 header {
+  background: linear-gradient(90deg, #1f1f2e, #2c2c44);
+  color: white;
+  padding: 40px 20px;
   text-align: center;
-  padding: 3rem 1rem;
-  background-color: var(--primary);
-  color: var(--white);
-  width: 100%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  position: relative;
 }
 
 header h1 {
-  font-size: 3rem;
-  font-weight: 900;
+  font-size: 2.8rem;
+  margin: 0;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
 header p {
   font-size: 1.2rem;
-  margin-top: 0.5rem;
+  margin-top: 10px;
+  opacity: 0.95;
 }
 
-main {
-  width: 90%;
-  max-width: 800px;
-  margin: 2rem auto;
+/* 🕴️ Lottie Animation in Corner */
+#job-seeker-lottie {
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  width: 220px;
+  pointer-events: none;
+  opacity: 0.9;
+  animation: floaty 6s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.ticker {
+  background-color: #111;
+  color: #fff;
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 1rem;
+  border-top: 2px solid #0066ff;
+  border-bottom: 2px solid #0066ff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* 🌟 Job Section Styling */
+section {
+  padding: 40px 5%;
+  background: #fff;
+  transition: background 1s ease;
+}
+
+section:nth-child(even) {
+  background: #f6f8fa;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1e1e2f;
+  text-align: center;
+}
+
+.job-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  animation: fadeIn 1s ease-in;
 }
 
 .job-card {
-  background-color: var(--white);
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
-  border-left: 6px solid var(--primary);
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-.job-card h2 {
-  color: var(--secondary);
-  margin-bottom: 0.5rem;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.job-card p {
-  margin: 0.3rem 0;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #002244;
+}
+
+.job-details {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* 🟦 Apply Button */
 .apply-btn {
   display: inline-block;
-  margin-top: 1rem;
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 0.7rem 1.5rem;
-  border-radius: 5px;
+  margin-top: 18px;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #005eff, #00aaff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .apply-btn:hover {
-  background-color: var(--secondary);
+  background: #0044cc;
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-footer {
-  margin-top: auto;
-  padding: 1rem;
-  background-color: var(--primary);
-  color: var(--white);
+.apply-btn:active::after {
+  content: '';
+  position: absolute;
   width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  top: 0;
+  left: 0;
+  animation: clickFlash 0.3s ease;
+}
+
+@keyframes clickFlash {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* 🎈 Floating Icons */
+.floating-icon {
+  position: fixed;
+  top: -60px;
+  width: 48px;
+  opacity: 0.2;
+  z-index: -1;
+  animation: floatIcon 30s linear infinite;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0); opacity: 0.2; }
+  50% { opacity: 0.4; }
+  100% { transform: translateY(120vh); opacity: 0; }
+}
+
+/* ✨ Glowing Portal */
+#hireground-portal {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  margin: 60px auto 40px;
+  padding: 20px 40px;
+  background: radial-gradient(circle, #2a72ff, #001f4d);
+  color: white;
+  border-radius: 50px;
+  width: fit-content;
+  font-weight: 700;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2), 0 0 60px rgba(0,102,255,0.3);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(0,0,0,0.2), 0 0 60px rgba(0,102,255,0.3); }
+  50% { box-shadow: 0 0 40px rgba(0,0,0,0.3), 0 0 80px rgba(0,102,255,0.5); }
+}
+
+.filter-tabs button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: #0077ff;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.filter-tabs button:hover {
+  background: #005be1;
 }
