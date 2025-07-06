@@ -54,18 +54,6 @@ header p {
   50% { transform: translateY(-10px); }
 }
 
-.ticker {
-  background-color: #111;
-  color: #fff;
-  padding: 10px 0;
-  font-weight: 500;
-  font-size: 1rem;
-  border-top: 2px solid #0066ff;
-  border-bottom: 2px solid #0066ff;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-  text-align: center;
-}
-
 /* 🌟 Job Section Styling */
 section {
   padding: 40px 5%;
@@ -105,6 +93,11 @@ section h2 {
   animation: fadeInUp 0.6s ease forwards;
 }
 
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -121,21 +114,47 @@ section h2 {
   to { opacity: 1; }
 }
 
-.job-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+/* 🧱 Job Header Layout */
+.job-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
 }
 
-.job-title {
-  font-size: 1.5rem;
+.company-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #f0f0f0;
+  padding: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.company-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #003366;
+}
+
+.role-title {
+  font-size: 1rem;
   font-weight: 600;
-  color: #002244;
+  color: #444;
+  margin-top: 4px;
 }
 
 .job-details {
   margin-top: 10px;
   font-size: 0.95rem;
   color: #555;
+}
+
+.job-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 12px 0;
 }
 
 /* 🟦 Apply Button */
@@ -216,6 +235,7 @@ section h2 {
   50% { box-shadow: 0 0 40px rgba(0,0,0,0.3), 0 0 80px rgba(0,102,255,0.5); }
 }
 
+/* 🔘 Filter Buttons */
 .filter-tabs button {
   padding: 10px 20px;
   margin: 5px;
@@ -227,6 +247,7 @@ section h2 {
   font-weight: bold;
   transition: background 0.3s;
 }
+
 .filter-tabs button:hover {
   background: #005be1;
 }

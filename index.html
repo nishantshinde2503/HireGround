@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.8.1/lottie.min.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HireGround 💼 | Gateway to Greatness</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.8.1/lottie.min.js"></script>
 </head>
 <body>
   <header>
@@ -41,12 +41,25 @@
       container.innerHTML = '';
 
       jobs.forEach(job => {
+        const companyName = job.company.display_name || "unknown";
+        const logoFileName = companyName.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]/g, '') + ".png";
+        const logoPath = `company-logos/${logoFileName}`;
+
         const card = document.createElement('div');
         card.className = 'job-card';
         card.innerHTML = `
-          <div class="job-title">${job.title} @ ${job.company.display_name}</div>
-          <div class="job-details">📍 ${job.location.display_name} | 🗓️ ${new Date(job.created).toDateString()}</div>
-          <a class="apply-btn" href="${job.redirect_url}" target="_blank" onclick="playClick()">Apply Now</a>
+          <div class="job-header">
+            <img src="${logoPath}" alt="${companyName} logo" class="company-logo" onerror="this.style.display='none'" />
+            <div>
+              <div class="company-name">${companyName}</div>
+              <div class="role-title">${job.title}</div>
+            </div>
+          </div>
+          <hr class="job-divider" />
+          <div class="job-details">
+            📍 ${job.location.display_name} | 🗓️ ${new Date(job.created).toDateString()}
+          </div>
+          <a class="apply-btn" href="${job.redirect_url}" target="_blank" onclick="playClick()">Apply Now 🔗</a>
         `;
         container.appendChild(card);
       });
@@ -85,5 +98,10 @@
       path: 'job-seeker.json'
     });
   </script>
+  <footer style="text-align:center; padding: 20px 0; background:#f0f0f0; color:#555;">
+  <p>&copy; 2025 HireGround 💼 — All rights reserved.</p>
+  <p><a href="privacy.html" style="color:#0077ff; text-decoration:none;">Privacy Policy</a></p>
+</footer>
+
 </body>
 </html>

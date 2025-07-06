@@ -39,6 +39,18 @@
     {
       "title": "Developer",
       "company": {
+        "display_name": "Zensar Technologies"
+      },
+      "location": {
+        "display_name": "Bangalore, Karnataka"
+      },
+      "created": "2025-06-06T09:47:31Z",
+      "redirect_url": "https://www.adzuna.in/details/5235655199?utm_medium=api&utm_source=6fec1d82",
+      "description": "Key Responsibilities: Develop and maintain web applications using React.js for the frontend and Python Django for the backend. Design and implement RESTful APIs using Django Rest Framework. Good understanding of database concepts, especially in PostgreSQL. Participate in Agile development practices and contribute to team efforts. Work directly with clients with minimal support. Engage in code reviews to improve code quality and development practices. Qualifications: Should have exp in React 16,\u2026"
+    },
+    {
+      "title": "Developer",
+      "company": {
         "display_name": "ITC Infotech"
       },
       "location": {
@@ -287,18 +299,6 @@
       "created": "2025-05-31T08:39:05Z",
       "redirect_url": "https://www.adzuna.in/details/5224308520?utm_medium=api&utm_source=6fec1d82",
       "description": "Greetings from TCS TCS is hiring for SMALLTALK Developers for PAN INDIA locations . ( We are okay with International candidates as well if suitable candidates we get) Job Location : PAN INDIA / OUTSIDE INDIA AS WELL Mode of Interview : Virtual/ telephonic. Desired Experiance range : 5 years to 10 years DESIRED COMPETENCIES MUST HAVE Smalltalk Programming, Strong OOPS concepts, SDLC knowledge, Good Communication skills (for client interaction independently Good-to-Have PL/SQL, Java, GitHub, UNIX\u2026"
-    },
-    {
-      "title": "Developer",
-      "company": {
-        "display_name": "Euronet in Asia"
-      },
-      "location": {
-        "display_name": "Thane, Maharashtra"
-      },
-      "created": "2025-06-21T08:53:03Z",
-      "redirect_url": "https://www.adzuna.in/details/5260947372?utm_medium=api&utm_source=6fec1d82",
-      "description": "About Us Euronet Worldwide is a NASDAQ listed transactions and payments processing major with strong presence in North America, Europe, Middle East, India, and the Asia-Pacific regions. Today we are one of the world\u2019s foremost providers of electronic payment and transaction processing solutions for financial institutions, retailers, service providers and individual consumers through three primary business segments \u2014 Electronic Financial Transactions, Prepaid and Money Transfer. Last year, Euron\u2026"
     }
   ]
 }
